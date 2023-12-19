@@ -1,0 +1,9 @@
+---
+const { url, title, pubDate } = Astro.props
+
+const formattedPubDate = pubDate.slice(0,10)
+---
+
+<li>
+    <p>{formattedPubDate}</p><a href={url}>{title}</a>
+</li>

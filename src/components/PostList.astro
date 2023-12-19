@@ -1,0 +1,10 @@
+---
+import Post from "./Post.astro"
+const { posts } = Astro.props
+---
+
+<ul>
+    {posts.map((post) => (
+        <Post url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} />)
+    )}
+</ul>
