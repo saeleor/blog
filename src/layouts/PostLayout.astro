@@ -1,19 +1,15 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
-import HomeButton from "../components/HomeButton.astro"
 import PostHeader from "../components/PostHeader.astro"
-import TagSelect from "../components/TagSelect.astro";
 const { frontmatter } = Astro.props
 ---
 
 <BaseLayout pageTitle = {frontmatter.title}>
-    <HomeButton />
 	<PostHeader
+		title={frontmatter.title}
 		pubDate={frontmatter.pubDate}
-		descripton={frontmatter.description}
-		author={frontmatter.author}
 		image={frontmatter.image}
+		tags={frontmatter.tags}
 	/>
-	<TagSelect tags={frontmatter.tags} />
 	<slot />
 </BaseLayout>

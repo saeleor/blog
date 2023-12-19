@@ -5,5 +5,24 @@ const formattedPubDate = pubDate.slice(0,10)
 ---
 
 <li>
-    <p>{formattedPubDate}</p><a href={url}>{title}</a>
+    <a href={url}>
+        <span>{title}</span>
+        <time datetime={pubDate}>{formattedPubDate}</time>
+    </a>
 </li>
+
+<style>
+    a {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a:hover {
+        margin-bottom: -2px;
+    }
+
+    time {
+        min-width: 11rem;
+        margin-left: 1rem;
+    }
+</style>

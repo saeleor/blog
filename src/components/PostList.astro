@@ -8,3 +8,10 @@ const { posts } = Astro.props
         <Post url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate} />)
     )}
 </ul>
+
+<style>
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+</style>

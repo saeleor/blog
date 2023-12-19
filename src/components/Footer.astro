@@ -1,6 +1,33 @@
 ---
+const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-    Copyright 2024 @ Josep Coronado
+    <div>
+        <span>Made somewhere in 󰇧</span>
+        <span>Saeleor | Josep Coronado</span>
+    </div>
 </footer>
+
+<style>
+    footer {
+        text-align: center;
+        position: fixed;
+        height: 50px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin-bottom: 0px;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        max-width: 50em;
+        margin: auto;
+    }
+
+    span {
+        margin: 0 2em 0 2em;
+    }
+</style>

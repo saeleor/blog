@@ -1,0 +1,20 @@
+---
+const { tags } = Astro.props
+---
+
+<div>
+    {tags.map((tag) => (
+        <span># {tag.toLowerCase()}</span>
+    ))}
+</div>
+
+<style>
+    div {
+        display: block;
+        margin-bottom: 2em;
+    }
+
+    span {
+        margin-right: 2em;
+    }
+</style>

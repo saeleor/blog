@@ -2,8 +2,20 @@
 const { tags } = Astro.props
 ---
 
-<div>
+<nav>
     {tags.map((tag) => (
-        <p><a href={`/tags/${tag}`}>{tag}</a></p>
+        <a href={`/tags/${tag}`}>{tag}</a>
     ))}
-</div>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 5em 0 5em 0;
+    }
+
+    a:hover {
+        margin-bottom: -2px;
+    }
+</style>

@@ -1,15 +1,33 @@
 ---
-const { pubDate, image } = Astro.props
+import HomeButton from "./HomeButton.astro"
+import TagDisplay from "./TagDisplay.astro"
+
+const { title, pubDate, image, tags } = Astro.props
 
 const dateOptions: object = {
     year: "numeric",
     month: "long",
     day: "numeric"
 }
+
 const formattedPubDate = new Date(pubDate).toLocaleDateString(
     "en-US",
     dateOptions
 )
 ---
+
+<div>
+    <HomeButton />
+    <TagDisplay tags={tags} />
+</div>
+<time datetime={pubDate}>{formattedPubDate}</time>
+<h1>{title}</h1>
+<br>
 <img src={image.url} width="300" alt={image.alt} />
-<p>{formattedPubDate}</p>
+
+<style>
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
